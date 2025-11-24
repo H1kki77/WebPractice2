@@ -10,7 +10,6 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
-  /* Щоб текст не розпирав блоки вшир */
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -43,7 +42,6 @@ header#block-1 h1 {
   margin: 0;
 }
 
-/* --- FLEX CONTENT --- */
 .content-flex {
   display: flex;
   width: 100%;
@@ -62,7 +60,6 @@ header#block-1 h1 {
   display: flex;
   gap: 20px; 
 }
-/* flex: 1 1 0 дозволяє блокам зменшуватися (shrink) скільки завгодно */
 .row-top .block { flex: 1 1 0; min-width: 0; } 
 
 #block-6 { width: 100%; flex-grow: 1; }
@@ -74,7 +71,6 @@ header#block-1 h1 {
 }
 .column-right .block { flex: 1 1 0; min-width: 0; }
 
-/* Footer */
 footer#block-7 {
   display: flex;
   justify-content: space-between;
@@ -102,8 +98,6 @@ footer#block-7 a { text-decoration: none; color: inherit; }
 .layout-switcher a.active { font-weight: bold; text-decoration: none; color: #000; cursor: default; }
 
 @media (max-width: 768px) {
-  /* Прибираємо зміну напрямку flex-direction.
-     Структура залишається горизонтальною. */
   .block { padding: 10px; }
   header#block-1 h1 { font-size: 1.2em; }
 }
