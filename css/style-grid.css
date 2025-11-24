@@ -10,7 +10,6 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
-  /* Додаємо перенос слів, щоб при сильному стисненні текст не ламав сітку */
   word-wrap: break-word; 
   overflow-wrap: break-word;
 }
@@ -43,10 +42,8 @@ header#block-1 h1 {
   margin: 0;
 }
 
-/* --- GRID CONTENT --- */
 .content {
   display: grid;
-  /* ЗАВЖДИ 4 колонки, незалежно від ширини екрану */
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto; 
   column-gap: 20px; 
@@ -59,8 +56,6 @@ header#block-1 h1 {
 #block-5 { grid-column: 4; grid-row: 1 / 3; }
 #block-6 { grid-column: 1 / 3; grid-row: 2; }
 
-
-/* Footer */
 footer#block-7 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -84,12 +79,8 @@ footer#block-7 a { text-decoration: none; color: inherit; }
 .layout-switcher { margin-top: 5px; font-size: 0.9em; }
 .layout-switcher a.active { font-weight: bold; text-decoration: none; color: #000; cursor: default; }
 
-/* ADAPTIVE: Лише трохи зменшуємо шрифти або відступи, АЛЕ НЕ СТРУКТУРУ */
 @media (max-width: 768px) {
-  /* Структура Grid залишається незмінною */
-  /* Можна додати зменшення паддінгів, якщо треба */
   .block { padding: 10px; } 
   
-  /* Футер може стати трохи щільнішим */
   footer#block-7 { gap: 10px; }
 }
