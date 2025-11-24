@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: 'SF Pro Display', Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f7;
+}
+
+.container { width: 90%; max-width: 1200px; margin: 20px auto; }
+img { max-width: 100%; height: auto; display: block; margin: 15px auto; }
+
+header#block-1, footer#block-7 { background-color: #CAD8EF; }
+#block-2, #block-4 { background: #e2f0d9; }
+#block-3 { background: #ffffff; }
+#block-5, #block-6 { background: #f7e8e1; }
+
+.block {
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box; 
+  height: 100%; 
+  /* Важливо для таблиць на малих екранах */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* --- HEADER --- */
+header#block-1 {
+  margin: 0 20px 0;
+  text-align: right;
+  height: auto;
+}
+
+header#block-1 h1 {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 0;
+  display: inline-block;
+}
+
+/* --- TABLE LAYOUT --- */
+.content {
+  width: 100%;
+  margin-bottom: 0; 
+}
+
+.layout-table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 20px; 
+  table-layout: fixed; /* Це гарантує, що колонки будуть стискатися рівномірно */
+}
+
+.layout-table td {
+  padding: 0;
+  vertical-align: top;
+  height: 1px;
+}
+
+/* Ширини (4 віртуальні колонки) */
+.layout-table td { width: 25%; }
+
+
+/* --- FOOTER --- */
+footer#block-7 { 
+  overflow: hidden; 
+  margin: 0 20px; 
+  height: auto; 
+  padding: 20px;
+}
+
+footer#block-7 h2 {
+  background: #fff; padding: 10px 20px; border-radius: 8px; margin: 0;
+  float: left;
+}
+
+.footer-right { float: right; text-align: right; }
+
+footer#block-7 ul { 
+  margin: 0; padding: 0; list-style: none; display: inline-block;
+  margin-bottom: 5px;
+}
+footer#block-7 li { display: inline-block; margin-left: 15px; }
+footer#block-7 a { text-decoration: none; color: inherit; }
+
+.layout-switcher { display: block; font-size: 0.9em; color: #333; }
+.layout-switcher a.active { font-weight: bold; text-decoration: none; color: #000; cursor: default; }
+
+@media (max-width: 768px) {
+  /* Ми НЕ перетворюємо display:block, залишаємо таблицю */
+  .block { padding: 10px; }
+  
+  /* Футер на дуже малих екранах все ж краще центрувати, 
+     але структура таблиць зверху залишиться незмінною */
+  header#block-1 h1 { font-size: 1.2em; padding: 5px 10px; }
+}

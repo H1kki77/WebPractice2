@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'SF Pro Display', Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f7;
+}
+
+.block {
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  /* Щоб текст не розпирав блоки вшир */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+img { max-width: 100%; height: auto; display: block; margin: 15px auto; }
+
+header#block-1, footer#block-7 { background-color: #CAD8EF; }
+#block-2, #block-4 { background: #e2f0d9; }
+#block-3 { background: #ffffff; }
+#block-5, #block-6 { background: #f7e8e1; }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header#block-1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header#block-1 h1 {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* --- FLEX CONTENT --- */
+.content-flex {
+  display: flex;
+  width: 100%;
+  gap: 20px; 
+  align-items: stretch;
+}
+
+.column-left {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 10px);
+  gap: 20px;
+}
+
+.row-top {
+  display: flex;
+  gap: 20px; 
+}
+/* flex: 1 1 0 дозволяє блокам зменшуватися (shrink) скільки завгодно */
+.row-top .block { flex: 1 1 0; min-width: 0; } 
+
+#block-6 { width: 100%; flex-grow: 1; }
+
+.column-right {
+  display: flex;
+  width: calc(50% - 10px);
+  gap: 20px; 
+}
+.column-right .block { flex: 1 1 0; min-width: 0; }
+
+/* Footer */
+footer#block-7 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer#block-7 h2 {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+footer#block-7 ul { display: flex; gap: 15px; list-style: none; margin: 0; padding: 0; }
+footer#block-7 a { text-decoration: none; color: inherit; }
+
+.layout-switcher { font-size: 0.9em; color: #333; }
+.layout-switcher a.active { font-weight: bold; text-decoration: none; color: #000; cursor: default; }
+
+@media (max-width: 768px) {
+  /* Прибираємо зміну напрямку flex-direction.
+     Структура залишається горизонтальною. */
+  .block { padding: 10px; }
+  header#block-1 h1 { font-size: 1.2em; }
+}
